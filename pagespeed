@@ -1,0 +1,30 @@
+# ngx pagespeed
+pagespeed on;
+pagespeed FileCachePath /var/cache/nginx/ngx_pagespeed;
+pagespeed RewriteLevel PassThrough;
+
+# pagespeed RewriteLevel CoreFilters;
+pagespeed MemcachedServers "127.0.0.1:11211";
+
+# pagespeed LowercaseHtmlNames on;
+pagespeed ImageRecompressionQuality 85;
+
+pagespeed EnableFilters insert_dns_prefetch;
+
+# CSS Minification
+# pagespeed EnableFilters combine_css,rewrite_css;
+pagespeed EnableFilters move_css_above_scripts,move_css_to_head;
+pagespeed EnableFilters combine_css,rewrite_css,fallback_rewrite_css_urls;
+pagespeed EnableFilters inline_css,extend_cache_css;
+
+# JS Minification
+pagespeed EnableFilters combine_javascript,rewrite_javascript;
+pagespeed EnableFilters inline_javascript;
+
+# Images Optimization
+pagespeed EnableFilters recompress_images,recompress_jpeg,recompress_png,resize_images,resize_mobile_images,inline_preview_images;
+#pagespeed EnableFilters lazyload_images;
+
+# HTML Minification
+pagespeed EnableFilters remove_comments;
+pagespeed EnableFilters collapse_whitespace;
