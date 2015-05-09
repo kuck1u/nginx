@@ -1,6 +1,6 @@
     expires        off;
     fastcgi_split_path_info ^(.+\.php)(/.+)$;
-    fastcgi_pass   hhvm;
+    fastcgi_pass   phpfpm;
     fastcgi_index  index.php;
     fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
     include        fastcgi_params;
