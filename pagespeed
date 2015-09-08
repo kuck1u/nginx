@@ -1,9 +1,10 @@
 # ngx pagespeed
 pagespeed on;
 pagespeed FileCachePath /var/cache/nginx/ngx_pagespeed;
-pagespeed RewriteLevel PassThrough;
 
+pagespeed RewriteLevel PassThrough;
 # pagespeed RewriteLevel CoreFilters;
+
 pagespeed MemcachedServers "127.0.0.1:11211";
 
 # pagespeed LowercaseHtmlNames on;
